@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DTOs\DoctorDTO.cs" />
+    <Compile Include="DTOs\Patient DTO\AppointmentDTO.cs" />
+    <Compile Include="DTOs\Patient DTO\UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
