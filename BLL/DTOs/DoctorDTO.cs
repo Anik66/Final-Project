@@ -11,10 +11,7 @@ namespace BLL.DTOs
 
         public int Id { get; set; }
         [Required]
-       
-
-
-
+      
         public string Uname { get; set; }
         [Required]
         
