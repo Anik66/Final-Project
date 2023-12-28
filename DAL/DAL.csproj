@@ -63,8 +63,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DoctContext.cs" />
     <Compile Include="Models\Doctor.cs" />
-    <Compile Include="Models\Patient Models\Appointment.cs" />
-    <Compile Include="Models\Patient Models\User.cs" />
+    <Compile Include="Models\Patient_Models\Appointment.cs" />
+    <Compile Include="Models\Patient_Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\DoctorRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
