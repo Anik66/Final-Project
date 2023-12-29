@@ -12,7 +12,7 @@ namespace DAL.Repos
         internal DoctContext db;
         internal Repo()
         {
-
+            db = new DoctContext();
         }
     }
 }

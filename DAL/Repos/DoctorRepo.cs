@@ -12,7 +12,7 @@ namespace DAL.Repos
     {
         public Doctor Create(Doctor obj)
         {
-           db.Doctors.Add(obj);
+            db.Doctors.Add(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;
         }
