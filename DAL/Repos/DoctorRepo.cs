@@ -8,38 +8,37 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class DoctorRepo : Repo, IRepo<Doctor, string, Doctor>
+    internal class DoctorRepo : Repo, IRepo<Doctor, string, bool>, IAuth<bool>
     {
-        public Doctor Create(Doctor obj)
+        public bool Authenticate(string email, string password)
         {
-           db.Doctors.Add(obj);
-            if (db.SaveChanges() > 0) return obj;
-            return null;
+            var data = db.Doctors.FirstOrDefault(e => e.Email.Equals(email) && e.Password.Equals(password));
+            return data != null;
         }
-
-        public bool Delete(string id)
+        public bool Delete(string email)
         {
-            var ex = Read(id);
-            db.Doctors.Remove(ex);
+            var dc = Get(email);
+            db.Doctors.Remove(dc);
             return db.SaveChanges() > 0;
         }
-
-        public List<Doctor> Read()
+        public List<Doctor> Get()
         {
             return db.Doctors.ToList();
         }
-
-        public Doctor Read(string id)
+        public Doctor Get(string email)
         {
-            return db.Doctors.Find(id);
+            return db.Doctors.Find(email);
         }
-
-        public Doctor Update(Doctor obj)
+        public bool Insert(Doctor obj)
         {
-            var ex = Read(obj.Uname);
-            db.Entry(ex).CurrentValues.SetValues(obj);
-            if (db.SaveChanges() > 0) return obj;
-            return null;
-         }
+            db.Doctors.Add(obj);
+            return db.SaveChanges() > 0;
+        }
+        public bool Update(Doctor obj)
+        {
+            var exemp = Get(obj.Email);
+            db.Entry(exemp).CurrentValues.SetValues(obj);
+            return db.SaveChanges() > 0;
+        }
     }
 }

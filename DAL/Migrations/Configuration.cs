@@ -6,21 +6,21 @@
     using System.Linq;
     using System.Net;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DAL.Models.DoctContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DAL.HMSContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(DAL.Models.DoctContext context)
+        protected override void Seed(DAL.HMSContext context)
         {
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
 
-            for (int i = 1; i <= 20; i++) 
+            /*for (int i = 1; i <= 20; i++) 
             {
                 context.Doctors.AddOrUpdate(new Models.Doctor
                 {
@@ -37,7 +37,7 @@
             
             
             
-            }
+            }*/
         }
     }
 }

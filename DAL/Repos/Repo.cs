@@ -1,4 +1,4 @@
-﻿using DAL.Models;
+﻿using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +9,10 @@ namespace DAL.Repos
 {
     internal class Repo
     {
-        internal DoctContext db;
+        internal HMSContext db;
         internal Repo()
         {
-
+            db = new HMSContext();
         }
     }
 }
