@@ -10,12 +10,8 @@ namespace DAL.Interfaces
     {
         RET Create(CLASS obj);
         List<CLASS> Read();
-
         CLASS Read(ID id);
-
         RET Update(CLASS obj);
-
-
         bool Delete(ID id);
     }
 }

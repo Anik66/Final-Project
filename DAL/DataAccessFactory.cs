@@ -1,5 +1,6 @@
 ﻿using DAL.Interfaces;
 using DAL.Models;
+using DAL.Models.Patient_Models;
 using DAL.Repos;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,10 @@ namespace DAL
         public static IRepo<Doctor, string, Doctor> DoctorData()
         {
             return new DoctorRepo();
+        }
+        public static IRepo<Patient, string, Patient> PatientData() 
+        { 
+            return new PatientRepo(); 
         }
     }
 }
