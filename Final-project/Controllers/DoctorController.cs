@@ -11,8 +11,8 @@ using System.Web.Http.Cors;
 
 namespace Final_project.Controllers
 {
-    [Logged]
-    [EnableCors("*", "*", "*")]
+   / [Logged]
+    //[EnableCors("*", "*", "*")]
     public class DoctorController : ApiController
     {
         [HttpGet]
