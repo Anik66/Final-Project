@@ -12,6 +12,7 @@ namespace DAL.Models
     {
         //Doctor
         public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Token> Tokens { get; set; }
 
         //Patient
         public DbSet<Patient> Patients { get; set; }

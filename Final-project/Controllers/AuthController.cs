@@ -1,5 +1,5 @@
-﻿using BLL.Services;
 using System;
+using BLL.Services;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,6 +10,7 @@ namespace Final_project.Controllers
 {
     public class AuthController : ApiController
     {
+        public AuthController() { }
         [HttpGet]
         [Route("api/courses/all")]
         public HttpResponseMessage All()

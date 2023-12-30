@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccessFactory.cs" />
+    <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
     <Compile Include="Migrations\202312291726184_DOCTDB.cs" />
     <Compile Include="Migrations\202312291726184_DOCTDB.designer.cs">
@@ -65,10 +66,12 @@
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Patient_Models\Appointment.cs" />
     <Compile Include="Models\Patient_Models\Patient.cs" />
+    <Compile Include="Models\Token.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\DoctorRepo.cs" />
     <Compile Include="Repos\PatientRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
+    <Compile Include="Repos\TokenRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

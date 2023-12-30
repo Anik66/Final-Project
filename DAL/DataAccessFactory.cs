@@ -12,7 +12,15 @@ namespace DAL
 {
     public class DataAccessFactory
     {
-        public static IRepo<Doctor, string, Doctor> DoctorData()
+        public static IRepo<Doctor, string, bool> DoctorData()
+        {
+            return new DoctorRepo();
+        }
+        public static IRepo<Token, string, Token> TokenData()
+        {
+            return new TokenRepo();
+        }
+        public static IAuth<bool> AuthData()
         {
             return new DoctorRepo();
         }

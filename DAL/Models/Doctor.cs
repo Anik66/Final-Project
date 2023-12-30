@@ -9,7 +9,6 @@ namespace DAL.Models
 {
    public class Doctor
     {
-
         [Key, Required]
         [StringLength(15)]
         public string Email { get; set; }
@@ -37,6 +36,5 @@ namespace DAL.Models
         [Required]
         [StringLength(11)]
         public string Phonenumber { get; set; }
-
     }
 }
