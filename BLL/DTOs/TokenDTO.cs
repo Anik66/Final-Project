@@ -18,5 +18,6 @@ namespace BLL.DTOs
 
         [Required]
         public string DcMail { get; set; }
+
     }
 }
