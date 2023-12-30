@@ -57,9 +57,9 @@
     <Compile Include="DataAccessFactory.cs" />
     <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
-    <Compile Include="Migrations\202312271849180_DOCTDB.cs" />
-    <Compile Include="Migrations\202312271849180_DOCTDB.designer.cs">
-      <DependentUpon>202312271849180_DOCTDB.cs</DependentUpon>
+    <Compile Include="Migrations\202312291726184_DOCTDB.cs" />
+    <Compile Include="Migrations\202312291726184_DOCTDB.designer.cs">
+      <DependentUpon>202312291726184_DOCTDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DoctContext.cs" />
@@ -78,11 +78,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202312271849180_DOCTDB.resx">
-      <DependentUpon>202312271849180_DOCTDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312291726184_DOCTDB.resx">
+      <DependentUpon>202312291726184_DOCTDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

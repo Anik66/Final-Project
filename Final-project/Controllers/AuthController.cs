@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using BLL.Services;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,5 +11,19 @@ namespace Final_project.Controllers
     public class AuthController : ApiController
     {
         public AuthController() { }
+        [HttpGet]
+        [Route("api/courses/all")]
+        public HttpResponseMessage All()
+        {
+            try
+            {
+                var data = PatientService.Read();
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
     }
 }
