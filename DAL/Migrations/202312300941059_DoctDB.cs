@@ -5,7 +5,7 @@
     
     public partial class DoctDB : DbMigration
     {
-        public override void Up()
+        public override void  Up()
         {
             CreateTable(
                 "dbo.Appointments",
