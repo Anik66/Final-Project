@@ -1,11 +1,13 @@
 using BLL.DTOs;
 using BLL.Services;
+using Final_project.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Final_project.Controllers
 {
@@ -20,15 +22,6 @@ namespace Final_project.Controllers
             try
             {
                 var data = DoctorService.Get();
-    public class DoctorController : ApiController
-    {
-        [HttpGet]
-        [Route("api/courses/all")]
-        public HttpResponseMessage All()
-        {
-            try
-            {
-                var data = PatientService.Read();
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -90,7 +83,6 @@ namespace Final_project.Controllers
             catch (Exception ex)
             {
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
             }
         }
     }

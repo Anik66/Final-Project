@@ -11,7 +11,7 @@ namespace Final_project.Controllers
 {
     public class PatientController : ApiController
     {
-        [HttpGet]
+        /*[HttpGet]
         [Route("api/courses/all")]
         public HttpResponseMessage All()
         {
@@ -59,6 +59,6 @@ namespace Final_project.Controllers
         {
             var res = PatientService.(id);
             return Request.CreateResponse(HttpStatusCode.OK, res);
-        }
+        }*/
     }
 }

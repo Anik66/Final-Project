@@ -11,35 +11,29 @@ namespace DAL.Repos
 {
     internal class PatientRepo : Repo, IRepo<Patient, string, Patient>
     {
-        public Patient Create(Patient obj)
+        public Patient Delete(string id)
         {
-            db.Patients.Add(obj);
-            if (db.SaveChanges() > 0) return obj;
-            return null;
+            throw new NotImplementedException();
         }
 
-        public List<Patient> Read()
+        public List<Patient> Get()
         {
-            return db.Patients.ToList();
+            throw new NotImplementedException();
         }
 
-        public Patient Read(string id)
+        public Patient Get(string id)
         {
-            return db.Patients.Find(id);
+            throw new NotImplementedException();
+        }
+
+        public Patient Insert(Patient obj)
+        {
+            throw new NotImplementedException();
         }
 
         public Patient Update(Patient obj)
         {
-            var ex = Read(obj.Name);
-            db.Entry(ex).CurrentValues.SetValues(obj);
-            if (db.SaveChanges() > 0) return obj;
-            return null;
-        }
-        public bool Delete(string id)
-        {
-            var ex = Read(id);
-            db.Patients.Remove(ex);
-            return db.SaveChanges() > 0;
+            throw new NotImplementedException();
         }
     }
 }

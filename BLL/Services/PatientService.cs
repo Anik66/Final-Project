@@ -12,7 +12,7 @@ namespace BLL.Services
 {
     public class PatientService
     {
-        public static List<PatientDTO> Read()
+        /*public static List<PatientDTO> Read()
         {
             var data = DataAccessFactory.PatientData().Read();
             var Config = new MapperConfiguration(cfg => {
@@ -30,6 +30,6 @@ namespace BLL.Services
             var data = mapper.Map<Patient>(c);
             return DataAccessFactory.PatientData().Create(data);
         }
-        
+        */
     }
 }
