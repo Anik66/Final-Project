@@ -3,9 +3,9 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Patient : DbMigration
+    public partial class DoctDB : DbMigration
     {
-        public override void Up()
+        public override void  Up()
         {
             CreateTable(
                 "dbo.Appointments",
