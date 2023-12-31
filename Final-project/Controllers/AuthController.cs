@@ -1,12 +1,12 @@
-using System;
 using BLL.Services;
+using Final_project.Auth;
+using Final_project.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Final_project.Auth;
-using Final_project.Models;
 using System.Web.Http.Cors;
 
 namespace Final_project.Controllers
@@ -18,7 +18,12 @@ namespace Final_project.Controllers
         [Route("api/login")]
         public HttpResponseMessage Login(LoginModel login)
         {
-            var token = Request.Headers.Authorization.ToString();
+            string token = string.Empty;
+
+            if (Request.Headers.Authorization != null && !string.IsNullOrEmpty(Request.Headers.Authorization.ToString()))
+            {
+                token = Request.Headers.Authorization.ToString();
+            }
             AuthService.Logout(token);
             try
             {

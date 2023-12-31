@@ -55,13 +55,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DTOs\AppDetailDTO.cs" />
     <Compile Include="DTOs\DoctorDTO.cs" />
+    <Compile Include="DTOs\FeeDTO.cs" />
+    <Compile Include="DTOs\ManagerDTO.cs" />
     <Compile Include="DTOs\Patient_DTO\AppointmentDTO.cs" />
     <Compile Include="DTOs\Patient_DTO\PatientDTO.cs" />
     <Compile Include="DTOs\TokenDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AppDetailService.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\DoctorService.cs" />
+    <Compile Include="Services\FeeService.cs" />
+    <Compile Include="Services\ManagerService.cs" />
     <Compile Include="Services\PatientService.cs" />
   </ItemGroup>
   <ItemGroup>

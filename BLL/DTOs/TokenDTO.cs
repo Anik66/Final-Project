@@ -17,7 +17,7 @@ namespace BLL.DTOs
         public DateTime? DeletedAt { get; set; }
 
         [Required]
+        public string MngMail { get; set; }
         public string DcMail { get; set; }
-
     }
 }

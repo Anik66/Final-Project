@@ -19,7 +19,7 @@ namespace BLL.Services
             if (res)
             {
                 var token = new Token();
-                token.DcEmail = email;
+                token.MngMail = email;
                 token.CreatedAt = DateTime.Now;
                 token.TKey = Guid.NewGuid().ToString();
                 var ret = DataAccessFactory.TokenData().Insert(token);

@@ -4,28 +4,34 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.Models.Patient_Models;
 
-namespace BLL.DTOs
+namespace DAL.Models
 {
-    public class DoctorDTO
+    public class Manager
     {
-        [Required]
-        public string Uname { get; set; }
-        [Required]
-        public string Name { get; set; }
+        [Key]
         [Required]
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
         [Required]
-        public string Age { get; set; }
+        [StringLength(50)]
+        public string Name { get; set; }
         [Required]
+        [StringLength(10)]
         public string Gender { get; set; }
         [Required]
-        public string BloodGroup { get; set; }
-        [Required]
+        [StringLength(10)]
         public string Address { get; set; }
         [Required]
+        [StringLength(11)]
         public string Phonenumber { get; set; }
+        public virtual ICollection<Appointment> Appointments { get; set; }
+        
+        public Manager()
+        {
+            Appointments = new List<Appointment>();
+        }
     }
 }
