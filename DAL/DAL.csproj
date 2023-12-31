@@ -57,6 +57,11 @@
     <Compile Include="DataAccessFactory.cs" />
     <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
+    <Compile Include="Migrations\202312311853246_patient.cs" />
+    <Compile Include="Migrations\202312311853246_patient.designer.cs">
+      <DependentUpon>202312311853246_patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDetail.cs" />
     <Compile Include="Models\DoctContext.cs" />
     <Compile Include="Models\Doctor.cs" />
@@ -78,6 +83,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202312311853246_patient.resx">
+      <DependentUpon>202312311853246_patient.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
