@@ -21,10 +21,12 @@ namespace DAL.Models
 
         [Required]
         [ForeignKey("Doctor")]
-        public string DcMail { get; set; }
+       public string DcMail { get; set; }
 
-        public virtual Appointment Appointment { get; set; }
-        public virtual Doctor Doctor { get; set; }
+      
+       public virtual Appointment Appointment { get; set; }
+      
+       public virtual Doctor Doctor { get; set; }
 
     }
 }
