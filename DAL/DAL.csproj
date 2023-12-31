@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -57,9 +57,9 @@
     <Compile Include="DataAccessFactory.cs" />
     <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
-    <Compile Include="Migrations\202312300941059_DoctDB.cs" />
-    <Compile Include="Migrations\202312300941059_DoctDB.designer.cs">
-      <DependentUpon>202312300941059_DoctDB.cs</DependentUpon>
+    <Compile Include="Migrations\202312311407357_DOCTDB.cs" />
+    <Compile Include="Migrations\202312311407357_DOCTDB.designer.cs">
+      <DependentUpon>202312311407357_DOCTDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDetail.cs" />
@@ -85,8 +85,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202312300941059_DoctDB.resx">
-      <DependentUpon>202312300941059_DoctDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312311407357_DOCTDB.resx">
+      <DependentUpon>202312311407357_DOCTDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
