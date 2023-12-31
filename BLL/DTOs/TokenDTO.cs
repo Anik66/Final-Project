@@ -18,6 +18,6 @@ namespace BLL.DTOs
 
         [Required]
         public string MngMail { get; set; }
-
+        public string DcMail { get; set; }
     }
 }
