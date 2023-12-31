@@ -19,7 +19,7 @@ namespace DAL.Models
         public DateTime PaymentDate { get; set; }
         [Required]
         [ForeignKey("Patient")]
-        public int PId { get; set;}
+        public string PtMail { get; set;}
         [Required]
         [ForeignKey("Appointment")]
         public int AId { get; set; }

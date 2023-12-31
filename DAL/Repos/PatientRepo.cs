@@ -9,31 +9,37 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class PatientRepo : Repo, IRepo<Patient, string, Patient>
+    internal class PatientRepo : Repo, IRepo<Patient, string, bool>
     {
-        public Patient Delete(string id)
+        public bool Authenticate(string email, string password)
         {
-            throw new NotImplementedException();
+            var data = db.Patients.FirstOrDefault(e => e.Email.Equals(email) && e.Password.Equals(password));
+            return data != null;
         }
-
+        public bool Delete(string email)
+        {
+            var pt = Get(email);
+            db.Patients.Remove(pt);
+            return db.SaveChanges() > 0;
+        }
         public List<Patient> Get()
         {
-            throw new NotImplementedException();
+            return db.Patients.ToList();
         }
-
-        public Patient Get(string id)
+        public Patient Get(string email)
         {
-            throw new NotImplementedException();
+            return db.Patients.Find(email);
         }
-
-        public Patient Insert(Patient obj)
+        public bool Insert(Patient obj)
         {
-            throw new NotImplementedException();
+            db.Patients.Add(obj);
+            return db.SaveChanges() > 0;
         }
-
-        public Patient Update(Patient obj)
+        public bool Update(Patient obj)
         {
-            throw new NotImplementedException();
+            var exemp = Get(obj.Email);
+            db.Entry(exemp).CurrentValues.SetValues(obj);
+            return db.SaveChanges() > 0;
         }
     }
 }

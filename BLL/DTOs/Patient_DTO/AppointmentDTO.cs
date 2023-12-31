@@ -15,5 +15,7 @@ namespace BLL.DTOs.Patient_DTO
         public string Fee { get; set; }
         public string DateTime { get; set; }
         public string Chember_Address { get; set; }
+        public string Status { get; set; }
+        public string MngMail { get; set; }
     }
 }

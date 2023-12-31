@@ -36,9 +36,13 @@ namespace DAL
         {
             return new ManagerRepo();
         }
-        public static IRepo<Patient, string, Patient> PatientData() 
+        public static IRepo<Patient, string, bool> PatientData() 
         { 
             return new PatientRepo(); 
+        }
+        public static IRepo<Appointment,int, bool> AppointmentData() 
+        {
+            return new AppointmentRepo();
         }
     }
 }

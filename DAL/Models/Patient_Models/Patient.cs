@@ -11,15 +11,17 @@ namespace DAL.Models.Patient_Models
     {
         [Key]
         [Required]
-        public int Id { get; set; }
-        [Required]
-        public string Name { get; set; }
-        [Required]
-        [StringLength(20)]
+        [StringLength(15)]
         public string Email { get; set; }
         [Required]
         [StringLength(20)]
+        public string Name { get; set; }
+        [Required]
+        [StringLength(20)]
         public string Password { get; set; }
+        [Required]
+        [StringLength(10)]
+        public string Gender { get; set; }
         [Required]
         [StringLength(20)]
         public string PhoneNumber { get; set; }
