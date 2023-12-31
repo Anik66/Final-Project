@@ -2,7 +2,7 @@
 {
     using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class DOCTDB : DbMigration
     {
         public override void Up()
