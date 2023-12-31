@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using BLL.DTOs;
 using BLL.DTOs.Patient_DTO;
 using DAL;
+using DAL.Models;
 using DAL.Models.Patient_Models;
 using System;
 using System.Collections.Generic;
@@ -12,24 +14,51 @@ namespace BLL.Services
 {
     public class PatientService
     {
-        /*public static List<PatientDTO> Read()
+        public static List<PatientDTO> Get()
         {
-            var data = DataAccessFactory.PatientData().Read();
-            var Config = new MapperConfiguration(cfg => {
-                cfg.CreateMap<Patient, PatientDTO>();
+            var data = DataAccessFactory.PatientData().Get();
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<Patient, PatientDTO>();
             });
-            var mapper = new Mapper(Config);
-            return mapper.Map<List<PatientDTO>>(data);
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<List<PatientDTO>>(data);
+            return mapped;
         }
-        public static Patient Create (PatientDTO c)
+        public static PatientDTO Get(string email)
         {
-            var Config = new MapperConfiguration(cfg => {
-                cfg.CreateMap<PatientDTO, Patient>();
+            var data = DataAccessFactory.PatientData().Get(email);
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<Patient, PatientDTO>();
             });
-            var mapper = new Mapper(Config);
-            var data = mapper.Map<Patient>(c);
-            return DataAccessFactory.PatientData().Create(data);
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<PatientDTO>(data);
+            return mapped;
         }
-        */
+        public static bool Create(PatientDTO Patient)
+        {
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<PatientDTO, Patient>();
+            });
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<Patient>(Patient);
+            return DataAccessFactory.PatientData().Insert(mapped);
+        }
+        public static bool Update(PatientDTO Patient)
+        {
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<PatientDTO, Patient>();
+            });
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<Patient>(Patient);
+            return DataAccessFactory.PatientData().Update(mapped);
+        }
+        public static bool Delete(string email)
+        {
+            return DataAccessFactory.PatientData().Delete(email);
+        }
     }
 }

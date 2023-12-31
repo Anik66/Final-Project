@@ -21,9 +21,6 @@ namespace DAL.Models.Patient_Models
         public string Password { get; set; }
         [Required]
         [StringLength(10)]
-        public string Age { get; set; }
-        [Required]
-        [StringLength(10)]
         public string Gender { get; set; }
         [Required]
         [StringLength(20)]

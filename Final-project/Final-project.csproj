@@ -226,6 +226,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Auth\Logged.cs" />
     <Compile Include="Controllers\AppDetailController.cs" />
+    <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\FeeController.cs" />
@@ -253,10 +254,6 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{1fa05c7f-226c-4248-b38e-2672591b8632}</Project>
       <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{01520C2E-1E43-49AB-94F3-40C54480AE18}</Project>
-      <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

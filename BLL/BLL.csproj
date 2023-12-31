@@ -64,6 +64,7 @@
     <Compile Include="DTOs\TokenDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AppDetailService.cs" />
+    <Compile Include="Services\AppointmentService.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\DoctorService.cs" />
     <Compile Include="Services\FeeService.cs" />
@@ -71,13 +72,13 @@
     <Compile Include="Services\PatientService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{01520c2e-1e43-49ab-94f3-40c54480ae18}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

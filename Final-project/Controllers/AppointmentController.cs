@@ -7,20 +7,18 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Cors;
 
 namespace Final_project.Controllers
 {
-    [EnableCors("*", "*", "*")]
-    public class PatientController : ApiController
+    public class AppointmentController : ApiController
     {
         [HttpGet]
-        [Route("api/Patients")]
-        public HttpResponseMessage AllPatient()
+        [Route("api/Appointments")]
+        public HttpResponseMessage Appointments()
         {
             try
             {
-                var data = PatientService.Get();
+                var data = AppointmentService.Get();
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -29,12 +27,12 @@ namespace Final_project.Controllers
             }
         }
         [HttpGet]
-        [Route("api/Patients/{email}")]
-        public HttpResponseMessage FindPatient(string email)
+        [Route("api/Appointments/{id}")]
+        public HttpResponseMessage Appointmentl(int id)
         {
             try
             {
-                var data = PatientService.Get(email);
+                var data = AppointmentService.Get(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -43,12 +41,12 @@ namespace Final_project.Controllers
             }
         }
         [HttpPost]
-        [Route("api/Patients/delete/{email}")]
-        public HttpResponseMessage DeletePatient(string email)
+        [Route("api/Appointments/delete/{id}")]
+        public HttpResponseMessage DeleteAppointment(int id)
         {
             try
             {
-                var data = PatientService.Delete(email);
+                var data = AppointmentService.Delete(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -57,12 +55,12 @@ namespace Final_project.Controllers
             }
         }
         [HttpPost]
-        [Route("api/Patients/insert")]
-        public HttpResponseMessage InsertPatient(PatientDTO patient)
+        [Route("api/Appointments/insert")]
+        public HttpResponseMessage InsertBill(AppointmentDTO appointment)
         {
             try
             {
-                var data = PatientService.Create(patient);
+                var data = AppointmentService.Create(appointment);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -71,12 +69,12 @@ namespace Final_project.Controllers
             }
         }
         [HttpPost]
-        [Route("api/Patients/update")]
-        public HttpResponseMessage UpdatePatient(PatientDTO patient)
+        [Route("api/Appointments/update")]
+        public HttpResponseMessage UpdateBill(AppointmentDTO appointment)
         {
             try
             {
-                var data = PatientService.Update(patient);
+                var data = AppointmentService.Update(appointment);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
