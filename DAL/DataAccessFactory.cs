@@ -12,9 +12,21 @@ namespace DAL
 {
     public class DataAccessFactory
     {
+        public static IRepo<Manager, string, bool> ManagerData()
+        {
+            return new ManagerRepo();
+        }
         public static IRepo<Doctor, string, bool> DoctorData()
         {
             return new DoctorRepo();
+        }
+        public static IRepo<Fee, int, bool> FeeData()
+        {
+            return new FeeRepo();
+        }
+        public static IRepo<AppDetail, int, bool> AppDetailData()
+        {
+            return new AppDetailRepo();
         }
         public static IRepo<Token, string, Token> TokenData()
         {
@@ -22,7 +34,7 @@ namespace DAL
         }
         public static IAuth<bool> AuthData()
         {
-            return new DoctorRepo();
+            return new ManagerRepo();
         }
         public static IRepo<Patient, string, Patient> PatientData() 
         { 

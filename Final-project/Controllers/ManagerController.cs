@@ -11,16 +11,17 @@ using System.Web.Http.Cors;
 
 namespace Final_project.Controllers
 {
+    [Logged]
     [EnableCors("*", "*", "*")]
-    public class DoctorController : ApiController
+    public class ManagerController : ApiController
     {
         [HttpGet]
-        [Route("api/doctors")]
-        public HttpResponseMessage Doctors()
+        [Route("api/managers")]
+        public HttpResponseMessage Managers()
         {
             try
             {
-                var data = DoctorService.Get();
+                var data = ManagerService.Get();
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -29,12 +30,12 @@ namespace Final_project.Controllers
             }
         }
         [HttpGet]
-        [Route("api/doctors/{email}")]
-        public HttpResponseMessage Doctor(string email)
+        [Route("api/managers/{email}")]
+        public HttpResponseMessage Manager(string email)
         {
             try
             {
-                var data = DoctorService.Get(email);
+                var data = ManagerService.Get(email);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -43,12 +44,12 @@ namespace Final_project.Controllers
             }
         }
         [HttpPost]
-        [Route("api/doctors/delete/{email}")]
-        public HttpResponseMessage DeleteDoctor(string email)
+        [Route("api/managers/delete/{email}")]
+        public HttpResponseMessage DeleteManager(string email)
         {
             try
             {
-                var data = DoctorService.Delete(email);
+                var data = ManagerService.Delete(email);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -57,12 +58,12 @@ namespace Final_project.Controllers
             }
         }
         [HttpPost]
-        [Route("api/doctors/insert")]
-        public HttpResponseMessage InsertEmployee(DoctorDTO doctor)
+        [Route("api/managers/insert")]
+        public HttpResponseMessage InsertEmployee(ManagerDTO manager)
         {
             try
             {
-                var data = DoctorService.Create(doctor);
+                var data = ManagerService.Create(manager);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -71,12 +72,12 @@ namespace Final_project.Controllers
             }
         }
         [HttpPost]
-        [Route("api/doctors/update")]
-        public HttpResponseMessage UpdateEmployee(DoctorDTO doctor)
+        [Route("api/managers/update")]
+        public HttpResponseMessage UpdateEmployee(ManagerDTO manager)
         {
             try
             {
-                var data = DoctorService.Update(doctor);
+                var data = ManagerService.Update(manager);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)

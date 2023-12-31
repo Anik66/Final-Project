@@ -1,26 +1,23 @@
 using BLL.DTOs;
 using BLL.Services;
-using Final_project.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Cors;
 
 namespace Final_project.Controllers
 {
-    [EnableCors("*", "*", "*")]
-    public class DoctorController : ApiController
+    public class AppDetailController : ApiController
     {
         [HttpGet]
-        [Route("api/doctors")]
-        public HttpResponseMessage Doctors()
+        [Route("api/appdetails")]
+        public HttpResponseMessage AppDetails()
         {
             try
             {
-                var data = DoctorService.Get();
+                var data = AppDetailService.Get();
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -29,12 +26,12 @@ namespace Final_project.Controllers
             }
         }
         [HttpGet]
-        [Route("api/doctors/{email}")]
-        public HttpResponseMessage Doctor(string email)
+        [Route("api/appdetails/{id}")]
+        public HttpResponseMessage AppDetail(int id)
         {
             try
             {
-                var data = DoctorService.Get(email);
+                var data = AppDetailService.Get(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -43,12 +40,12 @@ namespace Final_project.Controllers
             }
         }
         [HttpPost]
-        [Route("api/doctors/delete/{email}")]
-        public HttpResponseMessage DeleteDoctor(string email)
+        [Route("api/appdetails/delete/{id}")]
+        public HttpResponseMessage DeleteAppDetail(int id)
         {
             try
             {
-                var data = DoctorService.Delete(email);
+                var data = AppDetailService.Delete(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -57,12 +54,12 @@ namespace Final_project.Controllers
             }
         }
         [HttpPost]
-        [Route("api/doctors/insert")]
-        public HttpResponseMessage InsertEmployee(DoctorDTO doctor)
+        [Route("api/appdetails/insert")]
+        public HttpResponseMessage InsertOrderDetail(AppDetailDTO appdetail)
         {
             try
             {
-                var data = DoctorService.Create(doctor);
+                var data = AppDetailService.Create(appdetail);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -71,17 +68,17 @@ namespace Final_project.Controllers
             }
         }
         [HttpPost]
-        [Route("api/doctors/update")]
-        public HttpResponseMessage UpdateEmployee(DoctorDTO doctor)
+        [Route("api/appdetails/update")]
+        public HttpResponseMessage UpdateOrderDetail(AppDetailDTO appdetail)
         {
             try
             {
-                var data = DoctorService.Update(doctor);
+                var data = AppDetailService.Update(appdetail);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                return Request.CreateResponse(HttpStatusCode.NotFound, ex.Message);
             }
         }
     }

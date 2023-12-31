@@ -11,6 +11,8 @@ namespace DAL.Models.Patient_Models
     {
         [Key]
         [Required]
+        public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
         [Required]
         [StringLength(20)]
@@ -22,10 +24,19 @@ namespace DAL.Models.Patient_Models
         [StringLength(20)]
         public string PhoneNumber { get; set; }
         [Required]
+        public double Balance { get; set; }
+        [Required]
         public string Address { get; set; }
         [Required]
         public string DOB { get; set; }
         [Required]
         public string Blood_Gloup { get; set; }
+        public virtual ICollection<Fee> Fees { get; set; }
+
+        public Patient()
+        {
+            this.Balance = 0;
+            Fees = new List<Fee>();
+        }
     }
 }

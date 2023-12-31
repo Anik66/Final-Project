@@ -19,8 +19,9 @@ namespace DAL.Models
         public DateTime CreatedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
         [Required]
-        [ForeignKey("Doctor")]
-        public string DcEmail { get; set; }
-        public virtual Doctor Doctor { get; set; }
+        [ForeignKey("Manager")]
+        public string MngMail { get; set; }
+        public virtual Manager Manager { get; set; }
+
     }
 }
