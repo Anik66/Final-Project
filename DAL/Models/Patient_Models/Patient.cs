@@ -30,7 +30,7 @@ namespace DAL.Models.Patient_Models
         [Required]
         public string Address { get; set; }
         [Required]
-        public string DOB { get; set; }
+        public DateTime DOB { get; set; }
         [Required]
         public string Blood_Gloup { get; set; }
         public virtual ICollection<Fee> Fees { get; set; }

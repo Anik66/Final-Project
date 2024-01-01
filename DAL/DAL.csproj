@@ -61,6 +61,10 @@
     <Compile Include="Migrations\202312311853246_patient.designer.cs">
       <DependentUpon>202312311853246_patient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401010654568_correction.cs" />
+    <Compile Include="Migrations\202401010654568_correction.designer.cs">
+      <DependentUpon>202401010654568_correction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDetail.cs" />
     <Compile Include="Models\DoctContext.cs" />
@@ -87,6 +91,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202312311853246_patient.resx">
       <DependentUpon>202312311853246_patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401010654568_correction.resx">
+      <DependentUpon>202401010654568_correction.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

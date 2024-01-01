@@ -19,7 +19,7 @@ namespace DAL.Models.Patient_Models
         [Required]
         public string Fee { get; set; }
         [Required]
-        public string DateTime { get; set; }
+        public DateTime DateTime { get; set; }
         [Required]
         public string Chember_Address { get; set; }
         public string Status { get; set; }
