@@ -35,11 +35,11 @@ namespace DAL
         {
             return new ManagerRepo();
         }
-        public static IRepo<Patient, string, bool> PatientData() 
+        public static IRepo<Patient, int, bool> PatientData() 
         { 
             return new PatientRepo(); 
         }
-        public static IRepo<Appointment,int, bool> AppointmentData() 
+        public static IRepo<Appointment, int, bool> AppointmentData() 
         {
             return new AppointmentRepo();
         }

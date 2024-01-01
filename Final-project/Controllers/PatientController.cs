@@ -13,9 +13,9 @@ namespace Final_project.Controllers
     [EnableCors("*", "*", "*")]
     public class PatientController : ApiController
     {
-        [HttpGet]
+         [HttpGet]
         [Route("api/patients")]
-        public HttpResponseMessage AllPatient()
+        public HttpResponseMessage Patients()
         {
             try
             {
@@ -28,12 +28,12 @@ namespace Final_project.Controllers
             }
         }
         [HttpGet]
-        [Route("api/patients/{email}")]
-        public HttpResponseMessage FindPatient(string email)
+        [Route("api/patients/{id}")]
+        public HttpResponseMessage Patientl(int id)
         {
             try
             {
-                var data = PatientService.Get(email);
+                var data = PatientService.Get(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -42,12 +42,12 @@ namespace Final_project.Controllers
             }
         }
         [HttpPost]
-        [Route("api/patients/delete/{email}")]
-        public HttpResponseMessage DeletePatient(string email)
+        [Route("api/patients/delete/{id}")]
+        public HttpResponseMessage Deletepatient(int id)
         {
             try
             {
-                var data = PatientService.Delete(email);
+                var data = PatientService.Delete(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)

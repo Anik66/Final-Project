@@ -23,9 +23,9 @@ namespace BLL.Services
             var mapped = mapper.Map<List<PatientDTO>>(data);
             return mapped;
         }
-        public static PatientDTO Get(string email)
+        public static PatientDTO Get(int id)
         {
-            var data = DataAccessFactory.PatientData().Get(email);
+            var data = DataAccessFactory.PatientData().Get(id);
             var cfg = new MapperConfiguration(c =>
             {
                 c.CreateMap<Patient, PatientDTO>();
@@ -54,9 +54,9 @@ namespace BLL.Services
             var mapped = mapper.Map<Patient>(Patient);
             return DataAccessFactory.PatientData().Update(mapped);
         }
-        public static bool Delete(string email)
+        public static bool Delete(int id)
         {
-            return DataAccessFactory.PatientData().Delete(email);
+            return DataAccessFactory.PatientData().Delete(id);
         }
     }
 }
