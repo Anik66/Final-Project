@@ -13,7 +13,7 @@ namespace BLL.DTOs.Patient_DTO
         public string Dr_Name { get; set; }
         public string Specialist { get; set; }
         public string Fee { get; set; }
-        public string DateTime { get; set; }
+        public DateTime DateTime { get; set; }
         public string Chember_Address { get; set; }
         public string Status { get; set; }
         public string MngMail { get; set; }

@@ -15,7 +15,7 @@ namespace BLL.DTOs.Patient_DTO
         public string Gender { get; set; }
         public double Balance { get; set; }
         public string Address { get; set; }
-        public string DOB { get; set; }
+        public DateTime DOB { get; set; }
         public string Blood_Gloup { get; set; }
     }
 }
