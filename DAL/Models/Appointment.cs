@@ -6,22 +6,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Models.Patient_Models
+namespace DAL.Models
 {
     public class Appointment
     {
         [Key]
         public int Id { get; set; }
         [Required]
+        [StringLength(15)]
         public string Dr_Name { get; set; }
         [Required]
+        [StringLength(10)]
         public string Specialist { get; set; }
         [Required]
+        [StringLength(10)]
         public string Fee { get; set; }
         [Required]
         public DateTime DateTime { get; set; }
         [Required]
+        [StringLength(15)]
         public string Chember_Address { get; set; }
+        [StringLength(10)]
         public string Status { get; set; }
 
         [Required, ForeignKey("Manager")]

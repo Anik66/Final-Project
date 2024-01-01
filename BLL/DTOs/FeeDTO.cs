@@ -12,7 +12,7 @@ namespace BLL.DTOs
         public int Id { get; set; }
         public double Paid { get; set; }
         public DateTime PaymentDate { get; set; }
-        public string PtMail { get; set; }
+        public int PId { get; set; }
         public int AID { get; set; }
     }
 }

@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
 using BLL.DTOs;
-using BLL.DTOs.Patient_DTO;
 using DAL;
 using DAL.Models;
-using DAL.Models.Patient_Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

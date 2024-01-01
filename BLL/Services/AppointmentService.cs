@@ -7,8 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BLL.DTOs.Patient_DTO;
-using DAL.Models.Patient_Models;
 
 namespace BLL.Services
 {

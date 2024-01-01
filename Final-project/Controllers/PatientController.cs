@@ -1,5 +1,4 @@
 ﻿using BLL.DTOs;
-using BLL.DTOs.Patient_DTO;
 using BLL.Services;
 using System;
 using System.Collections.Generic;
@@ -15,7 +14,7 @@ namespace Final_project.Controllers
     public class PatientController : ApiController
     {
         [HttpGet]
-        [Route("api/Patients")]
+        [Route("api/patients")]
         public HttpResponseMessage AllPatient()
         {
             try
@@ -29,7 +28,7 @@ namespace Final_project.Controllers
             }
         }
         [HttpGet]
-        [Route("api/Patients/{email}")]
+        [Route("api/patients/{email}")]
         public HttpResponseMessage FindPatient(string email)
         {
             try
@@ -43,7 +42,7 @@ namespace Final_project.Controllers
             }
         }
         [HttpPost]
-        [Route("api/Patients/delete/{email}")]
+        [Route("api/patients/delete/{email}")]
         public HttpResponseMessage DeletePatient(string email)
         {
             try
@@ -57,7 +56,7 @@ namespace Final_project.Controllers
             }
         }
         [HttpPost]
-        [Route("api/Patients/insert")]
+        [Route("api/patients/insert")]
         public HttpResponseMessage InsertPatient(PatientDTO patient)
         {
             try
@@ -71,7 +70,7 @@ namespace Final_project.Controllers
             }
         }
         [HttpPost]
-        [Route("api/Patients/update")]
+        [Route("api/patients/update")]
         public HttpResponseMessage UpdatePatient(PatientDTO patient)
         {
             try

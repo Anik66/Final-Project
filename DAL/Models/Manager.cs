@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.Models.Patient_Models;
+using DAL.Models;
 
 namespace DAL.Models
 {
