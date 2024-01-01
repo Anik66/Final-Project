@@ -1,6 +1,5 @@
 ﻿using DAL.Interfaces;
 using DAL.Models;
-using DAL.Models.Patient_Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

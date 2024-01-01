@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Models.Patient_Models
+namespace BLL.DTOs
 {
-    public class Patient
+    public class PatientDTO
     {
-        [Key]
+        public int Id { get; set; }
         [Required]
         [StringLength(15)]
         public string Email { get; set; }
@@ -20,25 +20,21 @@ namespace DAL.Models.Patient_Models
         [StringLength(20)]
         public string Password { get; set; }
         [Required]
-        [StringLength(10)]
+        [StringLength(5)]
+        public string Age { get; set; }
+        [Required]
+        [StringLength(5)]
         public string Gender { get; set; }
+        [Required]
+        [StringLength(5)]
+        public string BloodGroup { get; set; }
         [Required]
         [StringLength(20)]
         public string PhoneNumber { get; set; }
         [Required]
-        public double Balance { get; set; }
-        [Required]
+        [StringLength(20)]
         public string Address { get; set; }
         [Required]
-        public DateTime DOB { get; set; }
-        [Required]
-        public string Blood_Gloup { get; set; }
-        public virtual ICollection<Fee> Fees { get; set; }
-
-        public Patient()
-        {
-            this.Balance = 0;
-            Fees = new List<Fee>();
-        }
+        public double Balance { get; set; }
     }
 }

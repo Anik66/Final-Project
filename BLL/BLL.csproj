@@ -59,8 +59,8 @@
     <Compile Include="DTOs\DoctorDTO.cs" />
     <Compile Include="DTOs\FeeDTO.cs" />
     <Compile Include="DTOs\ManagerDTO.cs" />
-    <Compile Include="DTOs\Patient_DTO\AppointmentDTO.cs" />
-    <Compile Include="DTOs\Patient_DTO\PatientDTO.cs" />
+    <Compile Include="DTOs\AppointmentDTO.cs" />
+    <Compile Include="DTOs\PatientDTO.cs" />
     <Compile Include="DTOs\TokenDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AppDetailService.cs" />

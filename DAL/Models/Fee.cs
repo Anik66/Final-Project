@@ -1,4 +1,4 @@
-﻿using DAL.Models.Patient_Models;
+﻿using DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -19,12 +19,11 @@ namespace DAL.Models
         public DateTime PaymentDate { get; set; }
         [Required]
         [ForeignKey("Patient")]
-        public string PtMail { get; set;}
+        public int PId { get; set; }
         [Required]
         [ForeignKey("Appointment")]
         public int AId { get; set; }
         public virtual Patient Patient { get; set; }
         public virtual Appointment Appointment { get; set; }
-
     }
 }

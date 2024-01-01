@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class patient : DbMigration
+    public partial class demo : DbMigration
     {
         public override void Up()
         {
@@ -27,12 +27,12 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Dr_Name = c.String(nullable: false),
-                        Specialist = c.String(nullable: false),
-                        Fee = c.String(nullable: false),
-                        DateTime = c.String(nullable: false),
-                        Chember_Address = c.String(nullable: false),
-                        Status = c.String(),
+                        Dr_Name = c.String(nullable: false, maxLength: 15),
+                        Specialist = c.String(nullable: false, maxLength: 10),
+                        Fee = c.String(nullable: false, maxLength: 10),
+                        DateTime = c.DateTime(nullable: false),
+                        Chember_Address = c.String(nullable: false, maxLength: 15),
+                        Status = c.String(maxLength: 10),
                         MngMail = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
@@ -46,30 +46,31 @@
                         Id = c.Int(nullable: false, identity: true),
                         Paid = c.Double(nullable: false),
                         PaymentDate = c.DateTime(nullable: false),
-                        PtMail = c.String(nullable: false, maxLength: 15),
+                        PId = c.Int(nullable: false),
                         AId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Appointments", t => t.AId, cascadeDelete: true)
-                .ForeignKey("dbo.Patients", t => t.PtMail, cascadeDelete: true)
-                .Index(t => t.PtMail)
+                .ForeignKey("dbo.Patients", t => t.PId, cascadeDelete: true)
+                .Index(t => t.PId)
                 .Index(t => t.AId);
             
             CreateTable(
                 "dbo.Patients",
                 c => new
                     {
+                        Id = c.Int(nullable: false, identity: true),
                         Email = c.String(nullable: false, maxLength: 15),
                         Name = c.String(nullable: false, maxLength: 20),
                         Password = c.String(nullable: false, maxLength: 20),
-                        Gender = c.String(nullable: false, maxLength: 10),
+                        Age = c.String(nullable: false, maxLength: 5),
+                        Gender = c.String(nullable: false, maxLength: 5),
+                        BloodGroup = c.String(nullable: false, maxLength: 5),
                         PhoneNumber = c.String(nullable: false, maxLength: 20),
+                        Address = c.String(nullable: false, maxLength: 20),
                         Balance = c.Double(nullable: false),
-                        Address = c.String(nullable: false),
-                        DOB = c.String(nullable: false),
-                        Blood_Gloup = c.String(nullable: false),
                     })
-                .PrimaryKey(t => t.Email);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Managers",
@@ -122,11 +123,11 @@
             DropForeignKey("dbo.AppDetails", "DcMail", "dbo.Doctors");
             DropForeignKey("dbo.AppDetails", "AppId", "dbo.Appointments");
             DropForeignKey("dbo.Appointments", "MngMail", "dbo.Managers");
-            DropForeignKey("dbo.Fees", "PtMail", "dbo.Patients");
+            DropForeignKey("dbo.Fees", "PId", "dbo.Patients");
             DropForeignKey("dbo.Fees", "AId", "dbo.Appointments");
             DropIndex("dbo.Tokens", new[] { "MngMail" });
             DropIndex("dbo.Fees", new[] { "AId" });
-            DropIndex("dbo.Fees", new[] { "PtMail" });
+            DropIndex("dbo.Fees", new[] { "PId" });
             DropIndex("dbo.Appointments", new[] { "MngMail" });
             DropIndex("dbo.AppDetails", new[] { "DcMail" });
             DropIndex("dbo.AppDetails", new[] { "AppId" });
