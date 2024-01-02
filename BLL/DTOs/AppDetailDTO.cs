@@ -15,8 +15,8 @@ namespace BLL.DTOs
         [Required]
         public double DoctorFees { get; set; }
         [Required]
-        public int AId { get; set; }
+        public int AppId { get; set; }
         [Required]
-        public int DId { get; set; }
+        public string DcMail { get; set; }
     }
 }
