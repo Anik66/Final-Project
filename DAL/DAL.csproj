@@ -60,9 +60,9 @@
     <Compile Include="DataAccessFactory.cs" />
     <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
-    <Compile Include="Migrations\202401011831487_demo.cs" />
-    <Compile Include="Migrations\202401011831487_demo.designer.cs">
-      <DependentUpon>202401011831487_demo.cs</DependentUpon>
+    <Compile Include="Migrations\202401020630389_demo.cs" />
+    <Compile Include="Migrations\202401020630389_demo.designer.cs">
+      <DependentUpon>202401020630389_demo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDetail.cs" />
@@ -88,8 +88,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202401011831487_demo.resx">
-      <DependentUpon>202401011831487_demo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202401020630389_demo.resx">
+      <DependentUpon>202401020630389_demo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

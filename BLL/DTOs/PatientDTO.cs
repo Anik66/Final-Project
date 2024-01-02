@@ -20,13 +20,13 @@ namespace BLL.DTOs
         [StringLength(20)]
         public string Password { get; set; }
         [Required]
-        [StringLength(5)]
+        [StringLength(10)]
         public string Age { get; set; }
         [Required]
-        [StringLength(5)]
+        [StringLength(10)]
         public string Gender { get; set; }
         [Required]
-        [StringLength(5)]
+        [StringLength(10)]
         public string BloodGroup { get; set; }
         [Required]
         [StringLength(20)]
